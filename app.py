@@ -50,10 +50,10 @@ hyperlipidemia = st.selectbox("Hyperlipidemia", options=[0, 1])
 dm = st.selectbox("Diabetes Mellitus (DM)", options=[0, 1])
 hfa = st.selectbox("Hepatic Fat Accumulation (HFA)", options=[0, 1, 2, 3, 4])
 
-with open('models/Transformer.pkl','rb') as f:
+with open('Transformer.pkl','rb') as f:
     trans=pickle.load(f)
 
-with open('models/Logistic.pkl','rb') as f:
+with open('Logistic.pkl','rb') as f:
     model=pickle.load(f)
 
 if st.button("Submit"):
