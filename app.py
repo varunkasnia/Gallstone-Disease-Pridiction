@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import joblib
+import pickle
 
 st.title("GalStone Project")
 
@@ -50,7 +50,9 @@ hyperlipidemia = st.selectbox("Hyperlipidemia", options=[0, 1])
 dm = st.selectbox("Diabetes Mellitus (DM)", options=[0, 1])
 hfa = st.selectbox("Hepatic Fat Accumulation (HFA)", options=[0, 1, 2, 3, 4])
 
-pipeline = joblib.load("pipeline.pkl")
+with open('pipeline.pkl','rb') as f:
+
+    pipeline = pickle.load(f)
 
 if st.button("Submit"):
     
